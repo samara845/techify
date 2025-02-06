@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #04fdf1;
+}
+
+header {
+background-color: #04fdf1;
+color: #0a0a0a;
+padding: 10px 20px;
+position: sticky;
+top: 0;
+z-index: 1000;
+}
+.nav-container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+.logo {
+font-size: 1.5rem;
+font-weight: bold;
+}
+
+/* Search bar */
+.search-bar {
+position: relative;
+margin: 10px 20px;
+flex: 1;
+}
+.search-bar input {
+width: 100%;
+padding: 8px 12px;
+border: none;
+border-radius: 4px;
+}
+/* Icons group (login/signup, wishlist, cart) */
+.icons-group {
+display: flex;
+align-items: center;
+}
+.icons-group button, .icons-group .icon {
+background: none;
+border: none;
+color: #080808;
+margin-left: 15px;
+cursor: pointer;
+font-size: 1rem;
+}
+li{
+flex-direction: row;
+display: flex;
+row-gap: 1px;
+column-gap: 5px;
+align-items: center;
+}
+.container {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+}
+.product {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.product img {
+    width: 100px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+.details {
+    flex-grow: 1;
+}
+.discount {
+    color: orange;
+    font-weight: bold;
+}
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}
+.old-price {
+    text-decoration: line-through;
+    color: grey;
+    font-size: 14px;
+}
+.gold-price {
+    color: #d4af37;
+}
+.rating {
+    background: #ffd700;
+    padding: 2px 6px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 5px;
+}

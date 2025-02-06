@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login </title>
+    <link rel="stylesheet" href="styles16.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const loginForm = document.getElementById("loginForm");
+            const signupForm = document.getElementById("signupForm");
+            const toggleToSignup = document.getElementById("toggleToSignup");
+            const toggleToLogin = document.getElementById("toggleToLogin");
+            
+            signupForm.style.display = "none";
+
+            toggleToSignup.addEventListener("click", function() {
+                loginForm.style.display = "none";
+                signupForm.style.display = "block";
+            });
+
+            toggleToLogin.addEventListener("click", function() {
+                signupForm.style.display = "none";
+                loginForm.style.display = "block";
+            });
+
+            loginForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                let username = document.getElementById("loginUsername").value;
+                let password = document.getElementById("loginPassword").value;
+                let errorMessage = document.getElementById("error-message");
+
+                if (username === "admin" && password === "1234") {
+                    alert("Login Successful!");
+                    window.location.href = "dashboard.html";
+                } else {
+                    errorMessage.textContent = "Invalid username or password!";
+                }
+            });
+
+            signupForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                alert("Signup Successful! You can now login.");
+                signupForm.style.display = "none";
+                loginForm.style.display = "block";
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div id="loginForm">
+            <h2>Login to techify</h2>
+            <form>
+                <input type="text" id="loginUsername" placeholder="Enter your username" required>
+                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p id="error-message"></p>
+            <button class="toggle-btn" id="toggleToSignup">Don't have an account? Sign Up</button>
+        </div>
+        
+        <div id="signupForm">
+            <h2>Sign Up for techify</h2>
+            <form>
+                <input type="text" placeholder="Enter your username" required>
+                <input type="email" placeholder="Enter your email" required>
+                <input type="number" placeholder="Enter your number" required>
+                <input type="password" placeholder="Create a password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <button class="toggle-btn" id="toggleToLogin">Already have an account? Login</button>
+        </div>
+    </div>
+</body>
+</html>
